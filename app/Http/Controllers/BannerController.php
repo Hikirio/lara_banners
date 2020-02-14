@@ -16,7 +16,7 @@ class BannerController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.create');
     }
 
     /**
@@ -26,7 +26,6 @@ class BannerController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -59,7 +58,7 @@ class BannerController extends Controller
      */
     public function edit(Banner $banner)
     {
-        //
+        return view('admin.edit', compact('banner'));
     }
 
     /**

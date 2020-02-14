@@ -14,8 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin','AdminController@index');
+Route::get('/admin', 'AdminController@index');
 
+Route::post('/admin/create', 'BannerController@index');
+Route::get('/admin/{banner}/edit', 'BannerController@edit');
+Route::get('/admin/{banner}/update', 'BannerController@update');
+Route::delete('/admin/{banner}', 'BannerController@destroy');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
