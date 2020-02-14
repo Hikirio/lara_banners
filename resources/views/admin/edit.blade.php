@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="task" class="col-sm-3 control-label">Отчество</label>
+                <label for="task" class="col-sm-3 control-label">URl</label>
                 <div class="col-sm-6">
                     <input type="text" name="surname" id="surname" value="{{ $banner->url }}" class="form-control">
                 </div>
