@@ -6,40 +6,40 @@
     {{--    @include('common.errors')--}}
 
     <!-- Форма новой задачи -->
-        <form action="{{ url('/admin/tables/'.$banner->id.'/update') }}" method="POST" class="form-horizontal">
+        <form action="{{ url('/admin/'.$banner->id.'/update') }}" method="POST" class="form-horizontal">
             <input type="hidden" name="_method" value="PUT">
         {{ csrf_field() }}
         <!-- Имя задачи -->
             <div class="form-group">
-                <label for="task" class="col-sm-3 control-label">Название</label>
+                <label for="title" class="col-sm-3 control-label">Название</label>
                 <div class="col-sm-6">
-                    <input type="text" name="first_name" id="first_name" value="{{ $banner->title }}"
+                    <input type="text" name="title" id="title" value="{{ $banner->title }}"
                            class="form-control">
                 </div>
             </div>
             <div class="form-group">
-                <label for="task" class="col-sm-3 control-label">Изображение</label>
+                <label for="image" class="col-sm-3 control-label">Изображение</label>
                 <div class="col-sm-6">
-                    <input type="text" name="second_name" id="second_name" value="{{ $banner->image }}"
+                    <input type="text" name="image" id="image" value="{{ $banner->image }}"
                            class="form-control">
                 </div>
             </div>
             <div class="form-group">
-                <label for="task" class="col-sm-3 control-label">URl</label>
+                <label for="url" class="col-sm-3 control-label">URl</label>
                 <div class="col-sm-6">
-                    <input type="text" name="surname" id="surname" value="{{ $banner->url }}" class="form-control">
+                    <input type="text" name="url" id="url" value="{{ $banner->url }}" class="form-control">
                 </div>
             </div>
             <div class="form-group">
-                <label for="task" class="col-sm-3 control-label">Статус</label>
+                <label for="status" class="col-sm-3 control-label">Статус</label>
                 <div class="col-sm-6">
-                    <input type="text" name="street" id="street" value="{{ $banner->status }}" class="form-control">
+                    <input type="text" name="status" id="status" value="{{ $banner->status }}" class="form-control">
                 </div>
             </div>
             <div class="form-group">
-                <label for="task" class="col-sm-3 control-label">Позиция</label>
+                <label for="position" class="col-sm-3 control-label">Позиция</label>
                 <div class="col-sm-6">
-                    <input type="text" name="numberofhome" id="numberofhome" value="{{ $banner->position }}"
+                    <input type="text" name="position" id="position" value="{{ $banner->position }}"
                            class="form-control">
                 </div>
             </div>

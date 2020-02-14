@@ -70,7 +70,20 @@ class BannerController extends Controller
      */
     public function update(Request $request, Banner $banner)
     {
-        //
+        try {
+            $banner->fill([
+
+                'title' => $request->title,
+                'image' => $request->image,
+                'url' => $request->url,
+                'status' => $request->status,
+                'position' => $request->position,
+
+            ])->save();
+        } catch (\Exception $e) {
+            return $e;
+        }
+        return redirect('/admin');
     }
 
     /**
