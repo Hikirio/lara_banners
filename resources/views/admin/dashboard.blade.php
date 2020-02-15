@@ -291,8 +291,10 @@
                             <th scope="row">{{ $banner->id }}</th>
                             <td>{{$banner->title}}</td>
                             <td>{{$banner->image}}</td>
-                            <td>{{$banner->url}}</td>
-                            <td>{{$banner->status}}</td>
+                            <td><a href="{{$banner->url}}">{{$banner->url}}</a></td>
+                            <td>@if ($banner->status == 1) Enable
+                                @else Disable
+                                @endif</td>
                             <td>{{$banner->position}}</td>
                             <td>{{$banner->created_at}}</td>
                             <td>{{$banner->updated_at}}</td>
