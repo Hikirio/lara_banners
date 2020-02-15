@@ -16,7 +16,6 @@ class BannerController extends Controller
      */
     public function index()
     {
-        return view('admin.create');
     }
 
     /**
@@ -26,17 +25,30 @@ class BannerController extends Controller
      */
     public function create()
     {
+        return view('admin.create');
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @param  Banner  $banner
+     * @return \Exception|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(Request $request, Banner $banner)
     {
-        //
+        try {
+            $banner->fill([
+
+                'title' => $request->title,
+                'image' => $request->file,
+                'url' => $request->url,
+                'status' => $request->status,
+                'position' => $request->position,
+
+            ])->save();
+        } catch (\Exception $e) {
+            return $e;
+        }
+        return redirect('/admin');
     }
 
     /**
@@ -89,7 +101,6 @@ class BannerController extends Controller
 
     public function destroy(Banner $banner)
     {
-//        dd($banner);
         $banner->delete();
         return redirect('/admin');
     }

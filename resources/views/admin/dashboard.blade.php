@@ -264,12 +264,7 @@
                     </div>
                 </div>
 
-                <form action="{{ url('admin/create') }}" method="post">
-                    {{ csrf_field() }}
-                    <button class="btn btn-success btn-secondary" type="submit">
-                        Add new Banner
-                    </button>
-                </form>
+                <a href="{{route('create')}}" class="btn btn-success">Create new banner</a>
                 <br>
                 <table class="table">
                     <thead class="thead-dark">

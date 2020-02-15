@@ -16,15 +16,12 @@ Route::get('/', function () {
 });
 Route::get('/admin', 'AdminController@index');
 
-Route::post('/admin/create', 'BannerController@index');
-
-
 Route::get('/admin/{banner}/edit', 'BannerController@edit');
 Route::put('/admin/{banner}/update', 'BannerController@update');
 
-
+Route::get('/admin/create', 'BannerController@create')->name('create');
+Route::post('/admin/store', 'BannerController@store')->name('store');
 Route::delete('/admin/{banner}', 'BannerController@destroy');
-
 
 
 Auth::routes();

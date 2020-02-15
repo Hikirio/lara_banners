@@ -1,14 +1,12 @@
 @extends('layouts.app')
 @section('content')
-
-    <body>
     <!-- Форма создания задачи... -->
     <div class="row">
         <div class="col-lg-10">
             <div class="panel-body">
                 <!-- Форма новой задачи -->
-                <form action="{{ url('/admin/') }}" method="POST" class="form-horizontal">
-                    <input type="hidden" name="_method" value="PUT">
+                <form action="{{ route('store')  }}" method="POST" class="form-horizontal">
+                    <input type="hidden" name="_method">
                 {{ csrf_field() }}
                 <!-- Имя задачи -->
                     <div class="form-group">
@@ -21,7 +19,7 @@
                     <div class="form-group">
                         <label for="file" class="col-sm-3 control-label">Image</label>
                         <div class="col-sm-6">
-                            <input type="file" name="file" id="file" value=""
+                            <input type="text" name="file" id="file" value=""
                                    class="form-control">
                         </div>
                     </div>
@@ -59,7 +57,4 @@
         </div>
 
     </div>
-
-    </body>
-
-@stop
+@endsection
