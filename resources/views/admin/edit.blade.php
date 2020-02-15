@@ -34,6 +34,12 @@
                 <label for="status" class="col-sm-3 control-label">Статус</label>
                 <div class="col-sm-6">
                     <input type="text" name="status" id="status" value="{{ $banner->status }}" class="form-control">
+{{--                    <select class="form-control" name="status" id="status">--}}
+{{--                        <option value="{{ $banner->status }}">Enable</option>--}}
+{{--                        <option value="0">Disable</option>--}}
+
+{{--                    </select>--}}
+
                 </div>
             </div>
             <div class="form-group">

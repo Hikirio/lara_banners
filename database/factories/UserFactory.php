@@ -1,6 +1,8 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use App\Banner;
 use App\User;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
@@ -25,3 +27,12 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
+//$factory->define(Banner::class, function (Faker $faker) {
+//    return [
+//        'title' => $faker->title,
+//        'image' => $faker->image(),
+//        'url' => $faker->url,
+//        'status' => $faker->boolean, // password
+//        'postion' => $faker->numberBetween(1,30),
+//    ];
+//});

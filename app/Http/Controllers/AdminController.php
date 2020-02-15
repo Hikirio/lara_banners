@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Banner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -20,7 +21,7 @@ class AdminController extends Controller
     public function index()
     {
         $data = (new Banner)->find_all();
-        return view('admin.dashboard',compact('data'));
+        return view('admin.dashboard', compact('data'));
     }
 
     /**

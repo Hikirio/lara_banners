@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Banner extends Model
 {
@@ -12,6 +13,6 @@ class Banner extends Model
 
     public function find_all()
     {
-        return Banner::all();
+        return DB::table('banners')->paginate(5);
     }
 }
