@@ -307,7 +307,7 @@
                                         <i class="fa fa-btn fa-trash"></i>Edit
                                     </button>
                                 </form>
-                                <form action="{{ url('admin/dashboard/banners/'.$banner->id) }}" method="POST">
+                                <form action="{{ url('admin/'.$banner->id) }}" method="Post">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
