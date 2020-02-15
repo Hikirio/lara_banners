@@ -47,6 +47,11 @@
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{route('frontend')}}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>FrontEnd</span></a>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -206,7 +211,7 @@
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             Количество пользователей
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$count_users}}</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>

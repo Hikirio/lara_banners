@@ -5,7 +5,8 @@
         <div class="col-lg-10">
             <div class="panel-body">
                 <!-- Форма новой задачи -->
-                <form action="{{ route('store')  }}" method="POST" class="form-horizontal">
+                <form action="{{ route('store')  }}" method="POST" class="form-horizontal"
+                      enctype="multipart/form-data">
                     <input type="hidden" name="_method">
                 {{ csrf_field() }}
                 <!-- Имя задачи -->
@@ -19,8 +20,7 @@
                     <div class="form-group">
                         <label for="file" class="col-sm-3 control-label">Image</label>
                         <div class="col-sm-6">
-                            <input type="text" name="file" id="file" value=""
-                                   class="form-control">
+                            <input type="file" name="file" id="file" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">

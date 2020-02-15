@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/', 'FrontpageController@index')->name('frontend');
 Route::get('/admin', 'AdminController@index');
 
 Route::get('/admin/{banner}/edit', 'BannerController@edit');

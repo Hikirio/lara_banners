@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Banner;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,7 +22,8 @@ class AdminController extends Controller
     public function index()
     {
         $data = (new Banner)->find_all();
-        return view('admin.dashboard', compact('data'));
+        $count_users = (new User)->countUser();
+        return view('admin.dashboard', compact('data','count_users'));
     }
 
     /**

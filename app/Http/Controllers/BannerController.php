@@ -39,7 +39,7 @@ class BannerController extends Controller
             $banner->fill([
 
                 'title' => $request->title,
-                'image' => $request->file,
+                'image' => $request->file('file')->store('uploads', 'public'),
                 'url' => $request->url,
                 'status' => $request->status,
                 'position' => $request->position,
