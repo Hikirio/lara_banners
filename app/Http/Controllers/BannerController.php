@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Banner;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class BannerController extends Controller
 {
@@ -37,9 +38,8 @@ class BannerController extends Controller
     {
         try {
             $banner->fill([
-
                 'title' => $request->title,
-                'image' => $request->file('file')->store('uploads', 'public'),
+                'image' => $request->file('file')->store('', 'public'),
                 'url' => $request->url,
                 'status' => $request->status,
                 'position' => $request->position,
@@ -49,6 +49,10 @@ class BannerController extends Controller
             return $e;
         }
         return redirect('/admin');
+    }
+
+    public function resize(Request $request)
+    {
     }
 
     /**
